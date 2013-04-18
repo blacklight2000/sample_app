@@ -1,13 +1,18 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
+gem 'bootstrap-sass'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-  gem 'sqlite3'
+#  gem 'sqlite3'
+  gem 'pg'
   gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'spork'
 end
 
 
@@ -27,6 +32,9 @@ gem 'jquery-rails'
 
 group :test do
   gem 'capybara','1.1.2'
+  #system-dependent gems
+  gem 'rb-fsevent', :require => false
+  gem 'growl'
 end
 
 group :production do
